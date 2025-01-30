@@ -16,7 +16,7 @@ body {
   padding: 5px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .titleBar > h1 {
@@ -28,6 +28,15 @@ body {
 
 .titleBar > img {
   height: 200%;
+}
+
+#linkIcon {
+    height: 10vh;
+    transition: height 0.3s ease;
+}
+
+#linkIcon:hover {
+    height: 10.5vh;
 }
 
 #wrapper {

@@ -1,5 +1,6 @@
 import TitleBar from "./Components/TitleBar"
 import Card from "./Components/Card"
+import Navbar from "./Components/navbar"
 
 function App()
 {
