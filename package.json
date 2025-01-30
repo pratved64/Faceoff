@@ -1,7 +1,7 @@
 {
   "name": "faceoff",
   "private": true,
-  "proxy": "https://faceoff-seven.vercel.app/",
+  "proxy": "https://faceoff-1.onrender.com/",
   "version": "0.0.0",
   "type": "module",
   "react-scripts": "5.0.0",
