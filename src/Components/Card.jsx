@@ -1,23 +1,28 @@
-import { useState } from 'react'
 
-function Card({path, def, initElo})
+function Card({path, def, elo})
 {
-
-    const [state, setState] = useState({imagePath: path, elo: initElo})
-
-    function response()
-    {
-        setState((prevState) => {
-            // Place API calls here and return object with updated path and elo
-            console.log("Updated State of " + def)
-            return state
+    function response() {
+        // Place API calls here
+        alert("Clicked! " + def)
+        const s_name=def;
+        fetch("/api/rating", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ s_name }),
         })
+            .then((res) => res.json())
+            .then((data) => console.log("Response:", data));
+
+
+        window.location.reload();
+
+
     }
 
     return (
         <div className="card" onClick={response}>
-            <img src={state.imagePath} alt={def}/>
-            <p>{state.elo}</p>
+            <img src={path} alt={def}/>
+            <p>{elo}</p>
         </div>
     )
 }
