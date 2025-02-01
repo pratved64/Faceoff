@@ -5,7 +5,7 @@ function Card({path, def, elo})
         // Place API calls here
         alert("Clicked! " + def)
         const s_name=def;
-        fetch("/api/rating", {
+        fetch("https://faceoff-1.onrender.com/api/rating", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ s_name }),

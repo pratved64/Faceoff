@@ -6,12 +6,13 @@ function App() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
     const [data2, setValue2] = useState({name:'',elo:'',img:''});
     const fetchData = () => {
-        fetch("/api/random")
+        fetch("https://faceoff-1.onrender.com/api/random")
             .then((res) => res.json())
             .then((data) => {
                 setValue1({name:data.data1,elo:data.data1_elo,img:data.data1_img});
                 setValue2({name:data.data2,elo:data.data2_elo,img:data.data2_img});})
-            }
+            .catch(error => console.error(error))
+        }
     useEffect(() => {
         fetchData();
     }, []);
