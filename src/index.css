@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
 body {
-  /*background: #e09339;*/
+  /*background: #e09339;
   background-image: url("/src/assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
@@ -7,7 +11,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  */
+  min-width: 390px;
+  background: rgb(3,6,55);
+  background: linear-gradient(180deg, rgba(3,6,55,1) 0%, rgba(0,0,0,1) 35%, rgba(60,7,83,1) 97%);
 }
+/*
 
 .titleBar {
   background-color: #fff;
@@ -74,3 +83,4 @@ body {
   text-align: center;
   font-size: 24px;
 }
+*/
