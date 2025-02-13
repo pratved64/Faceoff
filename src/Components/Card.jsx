@@ -12,7 +12,7 @@ function Card({path, def, elo})
     console.log(def)
     function response() {
         // Place API calls here
-        alert("Clicked! " + def)
+        //alert("Clicked! " + def)
         const s_name=def;
         fetch("https://faceoff-1.onrender.com/api/rating", {
             method: "POST",
