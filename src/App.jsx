@@ -1,9 +1,11 @@
 import Card from "./Components/Card.jsx";
 import Titlebar from "./Components/TitleBar.jsx"
+import Ldmain from './ldboard/ldmain.jsx'
 import { motion } from "motion/react";
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
-function App() {
+function Home() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
     const [data2, setValue2] = useState({name:'',elo:'',img:''});
     const fetchData = () => {
@@ -37,6 +39,23 @@ function App() {
             </motion.div>
         </div>
     );
+}
+
+function Leaderboard()
+{
+    return <Ldmain />
+}
+
+function App()
+{
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="/leaderboard" element={<Leaderboard />}/>
+            </Routes>
+        </Router>
+    )
 }
 
 export default App;
