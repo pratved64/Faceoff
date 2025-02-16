@@ -13,7 +13,7 @@ function LDList() {
             fetch("https://faceoff-1.onrender.com/api/leaderboard")
                 .then((res) => res.json())
                 .then((data) => {
-                    setValue1({name:data.name,elo:data.elo,img:data.image_path});
+                    setValue({name:data.name,elo:data.elo,img:data.image_path});
 
         let arr = []
 
