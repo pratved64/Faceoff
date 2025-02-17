@@ -8,7 +8,7 @@ import {useState} from "react";
 function LDList() {
     function getElements() {
         // Fetch Data here
-        const [data, setValue] = useState({name:'',elo:'',img:''});
+        const [data, setValue] = useState({name:[],elo:[],img:[]});
         const fetchData = () => {
             fetch("https://faceoff-1.onrender.com/api/leaderboard")
                 .then((res) => res.json())
