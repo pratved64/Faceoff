@@ -3,6 +3,7 @@
 body {
     background-color: rgb(50, 50, 50);
     font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
 }
 
 #t3-cont {
