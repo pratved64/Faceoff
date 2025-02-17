@@ -19,7 +19,7 @@ function LDList() {
             })
             .then(data => {
                 let arr = []
-                for (let i = 4; i < 11; i++)
+                for (let i = 3; i < 11; i++)
                 {
                     arr.push({
                         rank: i,
