@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { motion } from "motion/react";
 
-function Card({path, def, elo})
+function Card({path, def })
 {
     Card.propTypes = {
         path: PropTypes.any,
@@ -9,7 +9,6 @@ function Card({path, def, elo})
         elo: PropTypes.any,
     };
 
-    console.log(def)
     function response() {
         // Place API calls here
         //alert("Clicked! " + def)
@@ -34,7 +33,6 @@ function Card({path, def, elo})
              transition={{duration: 0.2, delay: 1.9}}
              src={path} alt={def} className="h-80 m-2 border-2"/>
             <p className="text-lg font-semibold font-serif">{def}</p>
-            <p className="font-thin">{elo}</p>
         </div>
     )
 }

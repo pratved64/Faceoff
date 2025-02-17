@@ -33,7 +33,7 @@ function LDList() {
     }, [])
 
     return (
-        <div>
+        <div className="my-10 flex flex-col justify-center items-center w-full">
             {elements.map((element, index) => (
                 <LDRow key={index} {...element} />
             ))}
