@@ -3,7 +3,7 @@ import Titlebar from "./Components/TitleBar.jsx"
 import Ldmain from './ldboard/ldmain.jsx'
 import { motion } from "motion/react";
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { HashRouter as Router, Routes, Route} from 'react-router-dom'
 
 function Home() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
