@@ -19,10 +19,10 @@ function LDList() {
             })
             .then(data => {
                 let arr = []
-                for (let i = 3; i < 11; i++)
+                for (let i = 3; i < 10; i++)
                 {
                     arr.push({
-                        rank: i,
+                        rank: i+1,
                         name: data.name[i],
                         img: data.image_path[i]
                     })
