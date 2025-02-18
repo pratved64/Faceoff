@@ -31,7 +31,7 @@ function LD3()
                 <img alt="#1" className='border-2' src={data.img[0]}/>
                 <p className='text-yellow-400 font-extrabold text-2xl lg:text-5xl 2xl:text-6xl'>1</p>
             </div>
-            <div className='h-full 2xl:mx-8 w-fit mx-2 mt-16 sm:mt-40 flex flex-col justify-center items-center'>
+            <div className='mx-2 2xl:mx-8 mt-16 sm:mt-40 flex flex-col justify-center items-center'>
                 <p>{data.name[2]}</p>
                 <img alt="#3" className='border-2' src={data.img[2]}/>
                 <p className='font-bold'>3</p>
