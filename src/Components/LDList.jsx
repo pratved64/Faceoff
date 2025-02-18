@@ -19,13 +19,17 @@ function LDList() {
             })
             .then(data => {
                 let arr = []
+                //console.log(data)
                 for (let i = 3; i < 10; i++)
                 {
                     arr.push({
                         rank: i+1,
                         name: data.name[i],
-                        img: data.image_path[i]
+                        img: data.image_path[i],
+                        elo: data.elo[i]
                     })
+                    //console.log(arr)
+                    
                 }
                 setElements(arr)
             })
