@@ -33,10 +33,11 @@ function LDList() {
     }, [])
 
     return (
-        <div className="my-10 flex flex-col justify-center items-center w-full">
+        <div className="my-10 mb-4 flex flex-col justify-center items-center w-full">
             {elements.map((element, index) => (
                 <LDRow key={index} {...element} />
             ))}
+            <p className="text-white font-thin text-sm mt-4 lg:text-xl 2xl:text-2xl"> ~ project by PRAN</p>
         </div>
     );
 }

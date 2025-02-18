@@ -1,4 +1,6 @@
 import Card from "./Components/Card.jsx";
+import { ParticlesContainer } from "./Components/particles.tsx";
+
 import Titlebar from "./Components/TitleBar.jsx"
 import Ldmain from './ldboard/ldmain.jsx'
 import { motion } from "motion/react";
@@ -26,6 +28,7 @@ function Home() {
 
     return (
         <div className="min-h-[100svh] flex flex-col pb-4">
+            <div className="-z-20"><ParticlesContainer /></div>
             <div className="mt-2">
                 <Titlebar />
             </div>

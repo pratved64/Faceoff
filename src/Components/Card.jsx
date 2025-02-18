@@ -26,7 +26,7 @@ function Card({path, def })
     }
 
     return (
-        <div className="flex flex-col justify-center items-center h-full lg:hover:scale-105 bg-black text-white border-2 p-4 shadow-md hover:shadow-lg duration-500 cursor-pointer shadow-[#910A67]" onClick={response}>
+        <div className="flex flex-col justify-center items-center h-full lg:hover:scale-105 bg-black text-white border-2 p-4 shadow-md hover:shadow-lg duration-500 cursor-pointer shadow-red-400" onClick={response}>
             <motion.img
              initial = {{ opacity: 0}}
              animate = {{opacity: 1}}

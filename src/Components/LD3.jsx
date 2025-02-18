@@ -24,17 +24,17 @@ function LD3()
             <div className='mx-2 2xl:mx-8 mt-10 sm:mt-12 flex flex-col justify-center items-center'>
                 <p>{data.name[1]}</p>
                 <img alt="#2" className='border-2' src={data.img[1]}/>
-                <p>2</p>
+                <p className='font-bold'>2</p>
             </div>
             <div className='mb-10 flex flex-col justify-center items-center'>
                 <p>{data.name[0]}</p>
                 <img alt="#1" className='border-2' src={data.img[0]}/>
-                <p>1</p>
+                <p className='text-yellow-400 font-extrabold text-2xl lg:text-5xl 2xl:text-6xl'>1</p>
             </div>
             <div className='h-full 2xl:mx-8 w-fit mx-2 mt-16 sm:mt-40 flex flex-col justify-center items-center'>
                 <p>{data.name[2]}</p>
                 <img alt="#3" className='border-2' src={data.img[2]}/>
-                <p>3</p>
+                <p className='font-bold'>3</p>
             </div>
         </div>
     )
