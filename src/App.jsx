@@ -1,5 +1,5 @@
 import Card from "./Components/Card.jsx";
-
+import ParticlesComponent from "./Components/particles.jsx"
 
 import Titlebar from "./Components/TitleBar.jsx"
 import Ldmain from './ldboard/ldmain.jsx'
@@ -28,7 +28,7 @@ function Home() {
 
     return (
         <div className="min-h-[100svh] flex flex-col pb-4">
-           
+            <div className="-z-20"><ParticlesComponent /></div>
             <div className="mt-2">
                 <Titlebar />
             </div>
