@@ -10,7 +10,7 @@ function LDList() {
     const [elements, setElements] = useState([])
 
     useEffect(() => {
-        fetch('https://faceoff-1.onrender.com/api/leaderboard')
+        fetch('https://faceoff-2.onrender.com/api/leaderboard')
             .then(res => {
                 if (!res.ok) {
                     throw new Error('HTTP ERROR')
