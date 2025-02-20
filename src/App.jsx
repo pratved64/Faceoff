@@ -11,7 +11,7 @@ function Home() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
     const [data2, setValue2] = useState({name:'',elo:'',img:''});
     const fetchData = () => {
-        fetch("https://faceoff-1.onrender.com/api/random")
+        fetch("https://faceoff-2.onrender.com/api/random")
             .then((res) => res.json())
             .then((data) => {
                 setValue1({name:data.data1,elo:data.data1_elo,img:data.data1_img});
