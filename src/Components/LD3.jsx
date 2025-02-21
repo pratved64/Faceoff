@@ -5,7 +5,7 @@ function LD3()
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch("https://faceoff-1.onrender.com/api/leaderboard")
+        fetch("https://faceoff-2.onrender.com/api/leaderboard")
             .then(res => res.json())
             .then(fetched => {
                 setData({
