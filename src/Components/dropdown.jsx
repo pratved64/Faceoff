@@ -12,8 +12,8 @@ function Dropdown() {
                 return `${baseURL}/random`
             case "m":
                 return `${baseURL}/men`
-            case "p":
-                return `${baseURL}/pokemon`
+            default:
+                return `${baseURL}/random`
         }
     }
 
@@ -33,7 +33,6 @@ function Dropdown() {
             }}>
             <option value="w">Women</option>
             <option value="m">Men</option>
-            <option value="p">Pokemon</option>
         </select>
     )    
 }
