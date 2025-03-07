@@ -10,8 +10,9 @@ import { HashRouter as Router, Routes, Route} from 'react-router-dom'
 function Home() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
     const [data2, setValue2] = useState({name:'',elo:'',img:''});
+    const fetchURL = localStorage.getItem("url") || "https://faceoff-2.onrender.com/api/random"
     const fetchData = () => {
-        fetch("https://faceoff-2.onrender.com/api/random")
+        fetch(fetchURL)
             .then((res) => res.json())
             .then((data) => {
                 setValue1({name:data.data1,elo:data.data1_elo,img:data.data1_img});
