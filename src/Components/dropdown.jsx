@@ -11,7 +11,7 @@ function Dropdown() {
             case "w":
                 return `${baseURL}/random`
             case "m":
-                return `${baseURL}/men`
+                return `${baseURL}/random_m`
             default:
                 return `${baseURL}/random`
         }
