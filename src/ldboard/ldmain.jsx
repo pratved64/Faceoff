@@ -2,6 +2,7 @@ import LD3 from "../Components/LD3"
 import LDList from "../Components/LDList"
 import LDTitleBar from "../Components/LDTitleBar"
 import ParticlesComponent from "../Components/particles"
+import Dropdown from "../Components/dropdown"
 
 import "./ld.css"
 import ReactConfetti from "react-confetti"
@@ -11,12 +12,16 @@ function Ldmain()
 
     //console.log(elements)
     return (
+        <div>
+        <Dropdown page="ldboard" />
         <div className="w-full flex flex-col justify-center items-center">
             <div className="-z-20"><ParticlesComponent /></div>
+            
             <ReactConfetti recycle={false}/>
             <LDTitleBar />
             <LD3 />
             <LDList />
+        </div>
         </div>
     )
 }

@@ -8,9 +8,9 @@ import {useState, useEffect} from "react";
 function LDList() {
     
     const [elements, setElements] = useState([])
-
+    const url = localStorage.getItem("ldboard-url")
     useEffect(() => {
-        fetch('https://faceoff-2.onrender.com/api/leaderboard')
+        fetch(url)
             .then(res => {
                 if (!res.ok) {
                     throw new Error('HTTP ERROR')

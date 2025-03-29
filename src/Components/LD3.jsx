@@ -3,9 +3,9 @@ import { useState, useEffect} from 'react'
 function LD3()
 {
     const [data, setData] = useState(null)
-
+    const url = localStorage.getItem("ldboard-url")
     useEffect(() => {
-        fetch("https://faceoff-2.onrender.com/api/leaderboard")
+        fetch(url)
             .then(res => res.json())
             .then(fetched => {
                 setData({
