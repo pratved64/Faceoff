@@ -12,16 +12,13 @@ function Ldmain()
 
     //console.log(elements)
     return (
-        <div>
-        <Dropdown page="ldboard" />
         <div className="w-full flex flex-col justify-center items-center">
             <div className="-z-20"><ParticlesComponent /></div>
-            
             <ReactConfetti recycle={false}/>
             <LDTitleBar />
+            <Dropdown styles="bg-sky-50 mb-10" />
             <LD3 />
             <LDList />
-        </div>
         </div>
     )
 }

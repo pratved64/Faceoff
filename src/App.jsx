@@ -5,12 +5,21 @@ import Titlebar from "./Components/TitleBar.jsx"
 import Ldmain from './ldboard/ldmain.jsx'
 import { motion } from "motion/react";
 import { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route} from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, useSearchParams} from 'react-router-dom'
 
 function Home() {
     const [data1, setValue1] = useState({name:'',elo:'',img:''});
     const [data2, setValue2] = useState({name:'',elo:'',img:''});
-    const fetchURL = localStorage.getItem("url") || "https://faceoff-2.onrender.com/api/random"
+    
+    const [searchParams] = useSearchParams()
+    const selectedType = searchParams.get("type") || "w"
+    const urls = {
+        w: "https://faceoff-2.onrender.com/api/random",
+        m: "https://faceoff-2.onrender.com/api/random_m"
+    }
+
+    const fetchURL = selectedType === "w" ? urls.w : urls.m
+
     const fetchData = () => {
         fetch(fetchURL)
             .then((res) => res.json())

@@ -1,9 +1,19 @@
 import { useState, useEffect} from 'react'
+import { useSearchParams } from 'react-router-dom'
 
 function LD3()
 {
     const [data, setData] = useState(null)
-    const url = localStorage.getItem("ldboard-url")
+    const urls = {
+        w: "https://faceoff-2.onrender.com/api/leaderboard",
+        m: "https://faceoff-2.onrender.com/api/leaderboardm"
+    }
+
+    const [searchParams] = useSearchParams()
+    const selectedType = searchParams.get("type") || "w"
+
+    const url = selectedType === "w" ? urls.w : urls.m
+
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

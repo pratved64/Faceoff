@@ -1,65 +1,26 @@
 import { useEffect, useState } from "react"
+import { useSearchParams } from "react-router-dom"
 
-function Dropdown({ page }) {
+function Dropdown({ styles }) {
 
-    const def = localStorage.getItem("option") || "w"
-    const [selectedOption, setOption] = useState(def)
-    console.log(page)
-    const getURL = (option) => {
-        const baseURL = "https://faceoff-2.onrender.com/api" // CHANGE URLS AS PER BACKEND!!
-        if (page === "home") {
-            switch (option) {
-                case "w":
-                    return `${baseURL}/random`
-                case "m":
-                    return `${baseURL}/random_m`
-                default:
-                    return `${baseURL}/random`
-            }
-        } else if (page === "ldboard") {
-            switch (option) {
-                case "w":
-                    return `${baseURL}/leaderboard`
-                case "m":
-                    return `${baseURL}/leaderboardm`
-                default:
-                    return `${baseURL}/leaderboard`
-            }
-        }
-    }
-
-    console.log(getURL)
-
+    const [searchParams, setSearchParams] = useSearchParams()
     
-
-    
-    useEffect(() => {
-        localStorage.setItem(`${page}-url`, getURL(selectedOption))
-        localStorage.setItem("option", selectedOption)
-    }, [selectedOption])
-
-    if (page === "ldboard") {
-        return (
-            <select className="bg-sky-50 !absolute top-38 left-1/2 -translate-x-1/2" value={selectedOption} onChange={(e) => {
-                    setOption(e.target.value)
-                    location.reload()
-                }}>
-                <option value="w">Women</option>
-                <option value="m">Men</option>
-            </select>
-        )    
-    } else {
-        return (
-            <select className="bg-sky-50" value={selectedOption} onChange={(e) => {
-                    setOption(e.target.value)
-                    location.reload()
-                }}>
-                <option value="w">Women</option>
-                <option value="m">Men</option>
-            </select>
-        )    
+    const selectedOption = searchParams.get("type") || "w"
+    if (!searchParams.get("type"))
+    {
+        setSearchParams({type: "w"}, {replace: true})
     }
     
+    
+    return (
+        <select className={styles} value={selectedOption} onChange={(e) => {
+                setSearchParams({type: e.target.value}, {replace: true})
+                location.reload()
+            }}>
+            <option value="w">Women</option>
+            <option value="m">Men</option>
+        </select>
+    )    
 }
 
 export default Dropdown
