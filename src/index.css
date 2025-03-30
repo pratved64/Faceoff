@@ -13,9 +13,13 @@ body {
   font-family: 'Inter', sans-serif;
   */
   min-width: 390px;
-  background: rgb(3,6,55);
+  background: #020000;
   background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgb(74, 0, 0) 35%, rgba(0,0,0,1) 97%);
 }
+html {
+  background-color: #020000;
+}
+
 /*
 
 .titleBar {
