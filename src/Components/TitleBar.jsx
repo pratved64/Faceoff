@@ -9,10 +9,12 @@ function TitleBar() {
     return (
         <div className="flex w-full justify-between items-center h-16 bg-[] p-2">
             <img src={l} alt="Logo-Placeholder" className="h-28"/>
-            <Dropdown styles="bg-sky-50"/>
+            <div className= "flex gap-2 justify-center items-center">
+            <Dropdown />
             <Link to="/leaderboard">
             <img id="linkIcon" src={board} alt="Leaderboard" className='h-14 bg-white border-2 border-[#3C0753] rounded-xl'/>
             </Link>
+            </div>
         </div>
     )
 }

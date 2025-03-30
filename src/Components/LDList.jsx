@@ -1,6 +1,6 @@
 import LDRow from "./LDRow"
 import {useState, useEffect} from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // elements is an array of element object
 // element contains Rank, Name and Image path of each celebrity
@@ -9,16 +9,13 @@ import { useSearchParams } from "react-router-dom";
 function LDList() {
     
     const [elements, setElements] = useState([])
-    
+    const gen = useSelector((store) => store.face);
     const urls = {
         w: "https://faceoff-2.onrender.com/api/leaderboard",
         m: "https://faceoff-2.onrender.com/api/leaderboardm"
     }
 
-    const [searchParams] = useSearchParams()
-    const selectedType = searchParams.get("type") || "w"
-
-    const url = selectedType === "w" ? urls.w : urls.m
+    const url = gen === "w" ? urls.w : urls.m
 
     useEffect(() => {
         fetch(url)
@@ -45,18 +42,16 @@ function LDList() {
                 setElements(arr)
             })
             .catch(error => console.error("Error fetching data: ", error))
-    }, [])
-
+    }, [gen])
+    
     return (
         <div className="my-10 mb-4 flex flex-col justify-center items-center w-full">
             {elements.map((element, index) => (
                 <LDRow key={index} {...element} />
             ))}
-            <p className="text-white font-thin text-sm mt-4 lg:text-xl 2xl:text-2xl"> ~ project by PRAN</p>
+            <p className="text-white font-thin text-sm mt-4 lg:text-lg 2xl:text-2xl"> ~ project by PRAN</p>
         </div>
     );
 }
 
 export default LDList;
-
-// TODO: Styling for LDRow

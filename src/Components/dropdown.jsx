@@ -1,26 +1,19 @@
-import { useEffect, useState } from "react"
-import { useSearchParams } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { changeGen } from "../utils/faceSlice";
 
-function Dropdown({ styles }) {
-
-    const [searchParams, setSearchParams] = useSearchParams()
-    
-    const selectedOption = searchParams.get("type") || "w"
-    if (!searchParams.get("type"))
-    {
-        setSearchParams({type: "w"}, {replace: true})
+function Dropdown() {
+    const gender = useSelector((store) => store.face);
+    const dispatch = useDispatch();
+    const handleGen = (gen) => {
+        dispatch(changeGen(gen));
     }
     
-    
     return (
-        <select className={styles} value={selectedOption} onChange={(e) => {
-                setSearchParams({type: e.target.value}, {replace: true})
-                location.reload()
-            }}>
-            <option value="w">Women</option>
-            <option value="m">Men</option>
+        <select value={gender} className="bg-[#1A0000] cursor-pointer p-0.5 text-white font-sans border-2 rounded-lg" onChange={(e) => {handleGen(e.target.value)}}>
+            <option className="bg-black cursor-pointer" value="w">Women</option>
+            <option className="bg-black cursor-pointer"  value="m">Men</option>
         </select>
-    )    
+    )      
 }
 
 export default Dropdown
