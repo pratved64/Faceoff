@@ -1,16 +1,18 @@
 import { useState, useEffect} from 'react'
-import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 
 function LD3()
 {
-    const gen = useSelector((store) => store.face);
     const [data, setData] = useState(null)
     const urls = {
         w: "https://faceoff-2.onrender.com/api/leaderboard",
         m: "https://faceoff-2.onrender.com/api/leaderboardm"
     }
 
-    const url = gen === "w" ? urls.w : urls.m
+    const [searchParams] = useSearchParams()
+     const selectedType = searchParams.get("type") || "w"
+ 
+     const url = selectedType === "w" ? urls.w : urls.m
 
     useEffect(() => {
         fetch(url)
@@ -24,7 +26,7 @@ function LD3()
             })
             .catch(err => console.error("ERROR: ", err))
 
-    }, [gen])
+    }, [])
 
     if (!data) return <p>LOADING</p>
 
